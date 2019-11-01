@@ -1,7 +1,7 @@
 {
     "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template"],
+    "description": "PagSoft in Yii 2 Framework",
+    "keywords": ["yii2", "framework", "pagsoft"],
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
     "license": "BSD-3-Clause",
