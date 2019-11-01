@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use aryelds\sweetalert\SweetAlert;
 
 AppAsset::register($this);
 ?>
@@ -24,7 +25,13 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
+<?php
+echo SweetAlert::widget([
+    'options' => [
+        'title' => "Here's a message!"
+    ]
+]);
+$this->beginBody() ?>
 
 <div class="wrap">
     <?php
