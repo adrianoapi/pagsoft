@@ -19,9 +19,10 @@ use \app\models\Technology;
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'technology_id')->dropDownList(ArrayHelper::map(Technology::find()->all(), 'id', 'title'), ['prompt' => 'Select...']);?>
+
     <?= $form->field($model, 'category_id')->dropDownList(ArrayHelper::map(Category::find()->all(), 'id', 'description'), ['prompt' => 'Select...']); ?>
 
-    <?= $form->field($model, 'technology_id')->dropDownList(ArrayHelper::map(Technology::find()->all(), 'id', 'title'), ['prompt' => 'Select...']);?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

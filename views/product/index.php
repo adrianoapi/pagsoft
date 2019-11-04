@@ -26,16 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'price',
-            [
-                'attribute' => 'category_id',
-                'label'     => 'Category',
-                'value'     => function ($model, $index, $widget) { return $model->category->description; }
-            ],
-            [
-                'attribute' => 'technology_id',
-                'label'     => 'Technology',
-                'value'     => function ($model, $index, $widget) { return $model->technology->title; },
-            ],
+            'category_id',
+            'technology_id',
+
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
