@@ -20,22 +20,10 @@ class ProductController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => \yii\filters\AccessControl::className(),
-                'only' => ['create', 'update', 'delete'],
-                'rules' => [
-                    // deny all POST requests
-                    [
-                        'allow' => true,
-                        'verbs' => ['POST'],
-                        'roles' => ['@'],
-                    ],
-                    // allow authenticated users
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                    // everything else is denied
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
                 ],
             ],
         ];

@@ -20,10 +20,22 @@ class TechnologyController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'only' => ['update', 'delete'],
+                'rules' => [
+                    // deny all POST requests
+                    [
+                        'allow' => true,
+                        'verbs' => ['POST'],
+                        'roles' => ['@'],
+                    ],
+                    // allow authenticated users
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                    // everything else is denied
                 ],
             ],
         ];
