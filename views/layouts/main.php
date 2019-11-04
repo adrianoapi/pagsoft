@@ -25,13 +25,7 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<?php
-echo SweetAlert::widget([
-    'options' => [
-        'title' => "Here's a message!"
-    ]
-]);
-$this->beginBody() ?>
+<?php $this->beginBody() ?>
 
 <div class="wrap">
     <?php
